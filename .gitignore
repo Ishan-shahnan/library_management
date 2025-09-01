@@ -73,9 +73,13 @@ Thumbs.db
 *.pem
 .secret
 /static/
+/staticfiles/
 /media/
 set_password.py
 temp_*.py
+
+# Vercel
+.vercel
 
 docs/_build/
 
