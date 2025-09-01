@@ -28,16 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1yhu9j8fkq^)%+2f)m(5bw2*1t*2kv)n6m0t-vu5y#8ojyt3*w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+DEBUG = False
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "localhost"]
-if os.environ.get('VERCEL_URL'):
-    ALLOWED_HOSTS.append(os.environ.get('VERCEL_URL'))
-    
-# Add any additional Vercel-specific hosts
-VERCEL_DOMAIN = os.environ.get('VERCEL_BRANCH_URL') or os.environ.get('VERCEL_URL')
-if VERCEL_DOMAIN:
-    ALLOWED_HOSTS.append(VERCEL_DOMAIN.replace('https://', '').replace('http://', ''))
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -155,11 +148,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# For Vercel deployment
-if os.environ.get('VERCEL_ENV') == 'production':
-    STATIC_ROOT = '/tmp/staticfiles'
-else:
-    STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Whitenoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
