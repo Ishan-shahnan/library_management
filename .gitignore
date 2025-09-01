@@ -71,8 +71,6 @@ Thumbs.db
 *.key
 *.pem
 .secret
-/static/
-/staticfiles/
 /media/
 set_password.py
 temp_*.py
