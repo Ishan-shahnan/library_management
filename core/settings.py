@@ -16,9 +16,12 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
@@ -99,22 +102,25 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Database configuration for Vercel and local development
-postgres_url = os.environ.get('POSTGRES_URL_NON_POOLING') or os.environ.get('POSTGRES_URL') or os.environ.get('DATABASE_URL')
+DATABASES = {
+    "default": dj_database_url.parse(os.environ.get("POSTGRES_URL_NON_POOLING") or os.environ.get("POSTGRES_URL") or "")
+}
+# postgres_url = os.environ.get('POSTGRES_URL_NON_POOLING') or os.environ.get('POSTGRES_URL') or os.environ.get('DATABASE_URL')
 
-if postgres_url:
-    # Use PostgreSQL for production (Vercel)
-    DATABASES = {
-        'default': dj_database_url.parse(postgres_url)
-    }
-    DATABASES['default']['CONN_MAX_AGE'] = 600
-else:
-    # Use SQLite for local development
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# if postgres_url:
+#     # Use PostgreSQL for production (Vercel)
+#     DATABASES = {
+#         'default': dj_database_url.parse(postgres_url)
+#     }
+#     DATABASES['default']['CONN_MAX_AGE'] = 600
+# else:
+#     # Use SQLite for local development
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
 
 # Password validation
