@@ -1,0 +1,208 @@
+[
+  {
+    "model": "api.author",
+    "pk": 1,
+    "fields": {
+      "name": "Harper Lee",
+      "biography": "An American novelist."
+    }
+  },
+  {
+    "model": "api.author",
+    "pk": 2,
+    "fields": {
+      "name": "George Orwell",
+      "biography": "An English novelist and essayist."
+    }
+  },
+  {
+    "model": "api.author",
+    "pk": 3,
+    "fields": {
+      "name": "Jane Austen",
+      "biography": "An English novelist."
+    }
+  },
+  {
+    "model": "api.author",
+    "pk": 4,
+    "fields": {
+      "name": "J.R.R. Tolkien",
+      "biography": "An English writer, poet, and academic."
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 1,
+    "fields": {
+      "title": "To Kill a Mockingbird",
+      "author": 1,
+      "isbn": "9780061120084",
+      "category": "Fiction",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 2,
+    "fields": {
+      "title": "1984",
+      "author": 2,
+      "isbn": "9780451524935",
+      "category": "Dystopian Fiction",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 3,
+    "fields": {
+      "title": "Pride and Prejudice",
+      "author": 3,
+      "isbn": "9780141439518",
+      "category": "Romance",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 4,
+    "fields": {
+      "title": "The Hobbit",
+      "author": 4,
+      "isbn": "9780547928227",
+      "category": "Fantasy",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 1,
+    "fields": {
+      "name": "Member 1",
+      "email": "member1@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 2,
+    "fields": {
+      "name": "Member 2",
+      "email": "member2@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 3,
+    "fields": {
+      "name": "Member 3",
+      "email": "member3@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 4,
+    "fields": {
+      "name": "Member 4",
+      "email": "member4@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 5,
+    "fields": {
+      "name": "Member 5",
+      "email": "member5@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 6,
+    "fields": {
+      "name": "Member 6",
+      "email": "member6@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 7,
+    "fields": {
+      "name": "Member 7",
+      "email": "member7@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 8,
+    "fields": {
+      "name": "Member 8",
+      "email": "member8@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 9,
+    "fields": {
+      "name": "Member 9",
+      "email": "member9@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.member",
+    "pk": 10,
+    "fields": {
+      "name": "Member 10",
+      "email": "member10@example.com",
+      "membership_date": "2024-07-25"
+    }
+  },
+  {
+    "model": "api.borrowrecord",
+    "pk": 1,
+    "fields": {
+      "book": 1,
+      "member": 1,
+      "borrow_date": "2024-07-25",
+      "return_date": "2024-08-08"
+    }
+  },
+  {
+    "model": "api.borrowrecord",
+    "pk": 2,
+    "fields": {
+      "book": 2,
+      "member": 2,
+      "borrow_date": "2024-07-25",
+      "return_date": "2024-08-01"
+    }
+  },
+  {
+    "model": "api.borrowrecord",
+    "pk": 3,
+    "fields": {
+      "book": 4,
+      "member": 3,
+      "borrow_date": "2024-07-25",
+      "return_date": "2024-08-15"
+    }
+  },
+  {
+    "model": "api.borrowrecord",
+    "pk": 4,
+    "fields": {
+      "book": 3,
+      "member": 4,
+      "borrow_date": "2024-07-25",
+      "return_date": "2024-08-04"
+    }
+  }
+]
