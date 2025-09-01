@@ -22,5 +22,15 @@
     ],
     "env": {
       "DJANGO_SETTINGS_MODULE": "core.settings"
+<<<<<<< HEAD
     }
 }
+=======
+    },
+    "build": {
+      "env": {
+        "DJANGO_SETTINGS_MODULE": "core.settings"
+      }
+    }
+}
+>>>>>>> a281c65b20c7873644fa8d56e3122a24d35bad87
