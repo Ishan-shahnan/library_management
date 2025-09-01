@@ -154,14 +154,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Static files directories
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-] if os.path.exists(BASE_DIR / 'static') else []
+# For Vercel deployment
+if os.environ.get('VERCEL_ENV') == 'production':
+    STATIC_ROOT = '/tmp/staticfiles'
+else:
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Whitenoise configuration for Vercel
+# Whitenoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Media files configuration
